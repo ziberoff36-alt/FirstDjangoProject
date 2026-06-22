@@ -1,0 +1,27 @@
+# Виртуальное окружение
+.venv/
+venv/
+ENV/
+
+# Настройки PyCharm и других редакторов
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Локальная база данных Django
+db.sqlite3
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Локальные медиа-файлы и статика (если будут)
+/media/
+
+
+/Заметка

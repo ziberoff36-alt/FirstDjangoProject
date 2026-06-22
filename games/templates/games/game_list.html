@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин игр</title>
+</head>
+<body>
+<h2>Игры</h2>
+{% for game in games %}
+    <p><a href="{% url 'game_detail' game.pk %}">{{game.name}}</a> ({{game.year}}) - {{game.rating}}/10 - Платформа: {% if game.platform %} <a href="{% url 'games_by_platform' game.platform.pk %}">{{game.platform}}</a> {% else %} На всех устройствах {% endif %}</p>
+{% endfor %}
+</body>
+</html>

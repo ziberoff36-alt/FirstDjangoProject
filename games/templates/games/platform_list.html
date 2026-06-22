@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин игр</title>
+</head>
+<body>
+<h2>Платформы</h2>
+{% for platform in platforms %}
+  <p><a href="{% url 'games_by_platform' platform.pk %}">{{platform.name}}</a></p>
+{% endfor %}
+</body>
+</html>
