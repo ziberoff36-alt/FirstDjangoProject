@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from .models import Game, Platform
 
@@ -26,11 +26,9 @@ class GamesByPlatformListView(ListView):
     model = Game
     template_name = 'games/games_by_platform.html'
     context_object_name = 'games'
-
     def get_queryset(self):
         self.platform = get_object_or_404(Platform, pk=self.kwargs['pk'])
         return Game.objects.filter(platform=self.platform)
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['platform'] = self.platform
