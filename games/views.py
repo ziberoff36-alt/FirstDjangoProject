@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from .models import Game, Platform
 from .forms import GameForm
@@ -44,4 +44,10 @@ class GameCreateView(CreateView):
 class GameDeleteView(DeleteView):
     model = Game
     template_name = 'games/game_delete.html'
+    success_url = reverse_lazy('game_list')
+
+class GameUpdateView(UpdateView):
+    model = Game
+    form_class = GameForm
+    template_name = 'games/game_form.html'
     success_url = reverse_lazy('game_list')
