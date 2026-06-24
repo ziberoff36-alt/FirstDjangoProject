@@ -7,5 +7,6 @@
 <body>
 <h2>Обзор игры</h2>
 <p>{{game.name}} ({{game.year}}) - Рейтинг: {{game.rating}}/10 - Платформа: {{game.platform.name|default:'на всех устройствах'}}</p>
+<p><a href="{% url 'game_list' %}">Вернуться в главное меню</a></p>
 </body>
 </html>
