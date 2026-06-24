@@ -33,3 +33,9 @@ class GamesByPlatformListView(ListView):
         context = super().get_context_data(**kwargs)
         context['platform'] = self.platform
         return context
+
+class GameCreateView(CreateView):
+    model = Game
+    form_class = GameForm
+    template_name = 'games/game_form.html'
+    success_url = reverse_lazy('game_list')
