@@ -9,5 +9,6 @@
 {% for game in games %}
     <p><a href="{% url 'game_detail' game.pk %}">{{game.name}}</a> ({{game.year}}) - {{game.rating}}/10 - Платформа: {% if game.platform %} <a href="{% url 'games_by_platform' game.platform.pk %}">{{game.platform}}</a> {% else %} На всех устройствах {% endif %}</p>
 {% endfor %}
+<p><a href="{% url 'game_create' %}">Добавить новую игру</a></p>
 </body>
 </html>
