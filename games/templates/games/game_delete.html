@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление игры</title>
+</head>
+<body>
+<h2>Вы уверены, что хотите удалить игру "{{ object.name }}"?</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Да, удалить окончательно</button>
+  <a href="{% url 'game_detail' object.pk %}">Отмена</a>
+</form>
+</body>
+</html>
