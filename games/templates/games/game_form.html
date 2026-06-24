@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить новую игру</title>
+</head>
+<body>
+    <h2>Добавление игры в магазин</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить игру</button>
+    </form>
+    <p><a href="{% url 'game_list' %}">Вернуться к списку игр</a></p>
+
+</body>
+</html>
